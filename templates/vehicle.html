@@ -1,19 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+     <main role="main" class="inner cover">
 
-{% load static %}<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        body {
-    background-image: url('{% static "game/images/210959-P04PZU-220.jpg" %}');
-           background-repeat: no-repeat;
+        <h1 class="cover-heading">Pick your favorite car to start playing ..</h1>
+        <div class="all_service_tab">
 
-           background-size: 100% 1600px;
-}
-    </style>
-</head>
-<body>
 
-</body>
-</html>
+            <div class="input-group" id="goDiv">
+               <p>Please go back to home and start again. You cant access this page directly.</p>
+                </div>
+
+
+
+            <p>Do you know, In the event of accident, the car owner should immediately inform the insurer about the incidence and file FIR in case of severe damage to the car by third party. Such prompt action is required to start the Claim process.</p>
+
+            <label for="car2" class="hover"><span class="car2">Location</span></label>
+            <label for="car3" class="hover"><span class="car3">Location</span></label>
+            <label for="car1" class="hover"><span class="car1">Location</span></label>
+
+
+        </div>
+        <p class="lead"></p>
+<div></div>
+    </main>
+
+{% endblock content %}

@@ -19,7 +19,7 @@ from django.urls import path, include
 
 from rest_framework import routers
 from api.views import TruecallerViewSet
-from game.views import IndexView, LogoutView, VehicleView, AgentView, AreaView
+from game.views import IndexView, LogoutView, VehicleView, AgentView, AreaView,GameView
 
 router = routers.DefaultRouter()
 router.register(r'truecaller', TruecallerViewSet)
@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^agent/$', AgentView.as_view(), name='agent'),
     url(r'^area/$', AreaView.as_view(), name='area'),
     url(r'^vehicle/$', VehicleView.as_view(), name='vehicle'),
+    url(r'^game/$', GameView.as_view(), name='vehicle'),
     url(r'^api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

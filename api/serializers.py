@@ -43,3 +43,35 @@ class TrueCallerSerializer(serializers.HyperlinkedModelSerializer):
         self.context['request'].session['area'] = validated_data['area']
         return truecaller_data
 
+
+
+class GameDataSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = GameData
+        fields = ('id','user','car_type','nil_depreciation_cover','idv',
+                  'personal_accident_cover',
+                    'member_of_automobile_association',
+                    'protection_for_accessories',
+                    'voluntary_deductible',
+                    'create_time',
+                    'PA_cover_for_un_named_passengers')
+        def create(self, validated_data):
+            user = self.context['request'].query_params.get('user', None)
+            game_data=GameData.objects.get(user=user)
+            return  game_data
+
+        def update(self, instance,validated_data):
+            instance.car_type=validated_data.get('car_type', instance.car_type)
+            instance.nil_depreciation_cover=validated_data.get('nil_depreciation_cover', instance.nil_depreciation_cover)
+            instance.idv=validated_data.get('idv', instance.idv)
+            instance.personal_accident_cover=validated_data.get('personal_accident_cover', instance.personal_accident_cover)
+            instance.protection_for_accessories=validated_data.get('protection_for_accessories', instance.protection_for_accessories)
+            instance.voluntary_deductible=validated_data.get('voluntary_deductible', instance.voluntary_deductible)
+            instance.create_time=validated_data.get('create_time', datetime.now())
+            instance.PA_cover_for_un_named_passengers=validated_data.get('PA_cover_for_un_named_passengers', instance.PA_cover_for_un_named_passengers)
+
+            return instance
+
+
+
+

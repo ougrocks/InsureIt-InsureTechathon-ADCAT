@@ -33,3 +33,7 @@ class AgentView(View):
 class AreaView(View):
     def get(self, request, *args, **kwargs):
         return render(request, template_name="area.html")
+
+class GameView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name="game.html")

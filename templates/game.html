@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+     <main role="main" class="inner cover">
+        <h1 class="cover-heading">Oh Great! You are a Player from {{ request.session.area }}, India</h1>
+        <div class="all_service_tab">
+
+            <div class="input-group" id="goDiv">
+               <p>Please go back to home and start again. You cant access this page directly.</p>
+                </div>
+
+
+
+            <form>
+                <div class="row">
+                <h5>Vehicle No :</h5><h5 style="{float:right;}">Policy No :</h5>
+                </div>
+                <div class="row">
+                <h6>Policy From </h6><h6 style="{float:right;}">To :</h6>
+                </div>
+            <hr style="color:white;">
+
+                <div class="row">
+
+                    <div class="col-sm-8">
+                        <h5>Coverage</h5><br>
+                 <input type="checkbox" name="vehicle" value="personal_accident_cover"><a href data-toggle="popover"  data-content="This is an optional cover, which protects you against accidental death and permanent total disablement. It is valid worldwide.
+">Personal Accident Cover</a></a><br>
+                        <a href data-toggle="popover"  data-content="Voluntary deductible is the amount that you agree to pay towards a claim (in addition to the compulsory deductible).
+">Voluntary Deductible :</a><input type="text" name="vehicle" value="377347.0"><br>
+                        <input type="checkbox" name="vehicle" value="PA_cover_for_un_named_passengers"><a href data-toggle="popover"  data-content="This is the best cover to have which will protect passengers other than the 'owner-driver' of the car against death or disability caused due to an accident.
+">PA Cover for Un-named Passengers</a><br>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <h5>Coverage</h5><br>
+                        <input type="checkbox" name="vehicle" value="nil_depreciation_cover"><a href data-toggle="popover"  data-content="This cover is helpful to combat the depreciating value of your car parts other than consumables and normal wear & tear.">Nil Depreciation Cover</a><br>
+                        <input type="checkbox" name="vehicle" value="protection_for_accessories"><a href data-toggle="popover"  data-content="Earn a discount if you have an anti-theft device installed and approved by the Automotive Research Association of India (ARAI)!
+">Anti Theft Device</a><br>
+                            <input type="checkbox" name="vehicle" value="member_of_automobile_association"><a href data-toggle="popover"  data-content="Get discount if you're a member of any of the specific Automobile Associations. Details mentioned in the car product page.
+">Member of Automobile Association</a><br>
+
+                    </div>
+
+                </div>
+<button type="submit">Next</button>
+
+            </form>
+
+        </div>
+        <p class="lead"></p>
+
+    </main>
+{% endblock content %}
