@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <h1 class="cover-heading">Policy Compare</h1>
+
+        {% if not request.session.status %}
+
+            <div class="input-group" id="goDiv">
+               <p>Please go back to home and start again. You cant access this page directly.</p>
+                </div>
+            {% else %}
+
+        <p>Hello Mr. {{ request.session.name }}, Best fit polices for you.</p>
+{#             <div class="wrapper fill">#}
+            <div class="card-columns">
+            {% for quote in quotes %}
+{##}
+{#                <div class="card-deck">#}
+{#                      <div class="card">#}
+{#                        <img class="card-img-top" src='{{ "https://www.easypolicy.com/HomePage"|add:quote.InsurerLogo }}' alt="Card image cap">#}
+{#                        <div class="card-block">#}
+{#                          <h4 class="card-title" style="color: black;">{{ quote.AvailablePolicyTerm }}</h4>#}
+{#                          <p class="card-text">{{ quote.Summary }}</p>#}
+{#                        </div>#}
+{#                        <div class="card-footer">#}
+{#                          <small class="text-muted" style="color:black;">Premium {{ quote.Premium }}</small>#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{##}
+{##}
+{#                </div>#}
+                <div class="card">
+                    <img class="card-img-top img-fluid" src="{{ "https://www.easypolicy.com/HomePage"|add:quote.InsurerLogo }}" alt="Card image cap">
+                    <div class="card-block">
+                      <h4 class="card-title" style="color: black">{{ quote.AvailablePolicyTerm }}</h4>
+                      <p class="card-text" style="color: black">{{ quote.Summary }}</p>
+                        <footer>
+                        <small class="text-muted" style="color: black;">
+                          Premium <cite title="Source Title">{{ quote.Premium }}</cite>
+                        </small>
+                      </footer>
+                    </div>
+                </div>
+
+            {%  endfor %}
+{#            </div>#}
+            </div>
+
+            {% endif %}
+
+        <p class="lead"></p>
+
+
+{% endblock content %}
